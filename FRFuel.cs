@@ -48,7 +48,7 @@ namespace FRFuel
 
         protected InLoopOutAnimation jerryCanAnimation;
 
-        protected Vehicle LastVehicle { get => lastVehicle; set => lastVehicle = value; }
+        protected Vehicle LastVehicle { get { return lastVehicle; } set { lastVehicle = value; } }
 
         protected Config Config { get; set; }
         #endregion
@@ -74,7 +74,7 @@ namespace FRFuel
             EventHandlers["onClientMapStart"] += new Action<dynamic>((dynamic res) =>
             {
                 CreateBlips();
-                CreateJerryCanPickUps();
+                //CreateJerryCanPickUps();
             });
 
             EventHandlers["frfuel:refuelAllowed"] += new Action<dynamic>((dynamic toggle) =>
@@ -91,7 +91,7 @@ namespace FRFuel
             try
             {
                 CreateBlips();
-                CreateJerryCanPickUps();
+                //CreateJerryCanPickUps();
             }
             catch
             {
